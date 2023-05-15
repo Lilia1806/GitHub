@@ -18,7 +18,6 @@ class CinemaAdapter(
     fun setList(listTwo: List<CinemaModel>) {
         this.list = listTwo
         notifyDataSetChanged()
-
     }
 
     inner class FirstViewHolder(private val binding: ItemCinemaBinding) :
@@ -32,7 +31,7 @@ class CinemaAdapter(
 
         fun onBind(model: CinemaModel) {
             binding.txt.text = model.name
-            Glide.with(binding.image.context).load(model.name).into(binding.image)
+            Glide.with(binding.img.context).load(model.name).into(binding.img)
         }
     }
 
