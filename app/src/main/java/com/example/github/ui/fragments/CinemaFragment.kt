@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.github.R
 import com.example.github.databinding.FragmentCinemaBinding
 import com.example.github.models.CinemaModel
 import com.example.github.ui.adapter.CinemaAdapter
@@ -32,6 +33,7 @@ class CinemaFragment : Fragment() {
 
         initialize()
         setupObserve()
+        click()
     }
 
     private fun setupObserve() {
@@ -42,6 +44,15 @@ class CinemaFragment : Fragment() {
 
     private fun initialize() {
         binding.rvCinema.adapter = adapter
+    }
+
+    private fun click() {
+        binding.btnAdd.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .add(R.id.fragment_container_view, ThirdFragment())
+                .addToBackStack(CinemaFragment::class.java.name)
+                .commit()
+        }
     }
 
     private fun onItemClick(model: CinemaModel) {
