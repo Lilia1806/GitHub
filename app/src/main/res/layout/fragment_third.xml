@@ -10,7 +10,7 @@
     <EditText
         android:id="@+id/editext_third"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:hint="@string/Введите"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/soxranit"
+        android:id="@+id/btn_click"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -26,5 +26,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editext_third" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
