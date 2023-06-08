@@ -29,10 +29,10 @@ class CinemaDetailFragment : Fragment() {
 
     private fun data() {
         binding.tvDetail.text = args.name
-        val name = args.image
+        val img = args.image
         Glide
-            .with(binding.tvDetail.context)
-            .load(name)
+            .with(binding.imgDetail.context)
+            .load(img)
             .into(binding.imgDetail)
     }
 }

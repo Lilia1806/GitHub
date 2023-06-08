@@ -1,16 +1,13 @@
-package com.example.github.ui.fragments
+package com.example.github.repository
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.github.models.CinemaModel
 
-class CinemaViewModel : ViewModel() {
+class CinemaRepository {
 
-    private var list: MutableLiveData<ArrayList<CinemaModel>> = MutableLiveData()
+    private val cinemaList = mutableListOf <CinemaModel>()
 
-    fun getListOfText(): MutableLiveData<ArrayList<CinemaModel>> {
-
-        val cinemaList: ArrayList<CinemaModel> = ArrayList()
+    fun getListOfText(): MutableList<CinemaModel> {
 
         cinemaList.add(
             CinemaModel(
@@ -108,7 +105,6 @@ class CinemaViewModel : ViewModel() {
                 "Wednesday"
             )
         )
-        list.value = cinemaList
-        return list
+        return cinemaList
     }
 }

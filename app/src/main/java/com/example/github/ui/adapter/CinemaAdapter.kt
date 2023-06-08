@@ -9,14 +9,13 @@ import com.example.github.databinding.ItemCinemaBinding
 import com.example.github.models.CinemaModel
 
 class CinemaAdapter(
+    private var cinemaList: MutableList<CinemaModel>,
     val onItemClick: (model: CinemaModel) -> Unit
 ) : RecyclerView.Adapter<CinemaAdapter.FirstViewHolder>() {
 
-    private var list: List<CinemaModel> = ArrayList()
-
     @SuppressLint("NotifyDataSetChanged")
-    fun setList(listTwo: List<CinemaModel>) {
-        this.list = listTwo
+    fun setList(listTwo: MutableList<CinemaModel>) {
+        this.cinemaList = listTwo
         notifyDataSetChanged()
     }
 
@@ -25,13 +24,13 @@ class CinemaAdapter(
 
         init {
             itemView.setOnClickListener {
-                onItemClick(list[adapterPosition])
+                onItemClick(cinemaList[adapterPosition])
             }
         }
 
         fun onBind(model: CinemaModel) {
             binding.txt.text = model.name
-            Glide.with(binding.img.context).load(model.name).into(binding.img)
+            Glide.with(binding.img.context).load(model.image).into(binding.img)
         }
     }
 
@@ -46,8 +45,8 @@ class CinemaAdapter(
     }
 
     override fun onBindViewHolder(holder: FirstViewHolder, position: Int) {
-        holder.onBind(list[position])
+        holder.onBind(cinemaList[position])
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = cinemaList.size
 }

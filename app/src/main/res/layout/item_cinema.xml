@@ -27,5 +27,4 @@
         app:layout_constraintStart_toEndOf="@id/img"
         tools:ignore="MissingConstraints"
         tools:text="NAME" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
