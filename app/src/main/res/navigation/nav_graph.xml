@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/cinemaFragment">
+
+    <fragment
+        android:id="@+id/cinemaFragment"
+        android:name="com.example.github.ui.fragments.CinemaFragment"
+        android:label="fragment_cinema"
+        tools:layout="@layout/fragment_cinema">
+        <action
+            android:id="@+id/action_cinemaFragment_to_cinemaDetailFragment"
+            app:destination="@id/cinemaDetailFragment" />
+        <action
+            android:id="@+id/action_cinemaFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+        <argument
+            android:name="saveText"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+    <fragment
+        android:id="@+id/cinemaDetailFragment"
+        android:name="com.example.github.ui.fragments.detail.CinemaDetailFragment"
+        android:label="fragment_cinema_detail"
+        tools:layout="@layout/fragment_cinema_detail">
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="name" />
+        <argument
+            android:name="image"
+            app:argType="string"
+            android:defaultValue="image" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.github.ui.fragments.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third">
+        <action
+            android:id="@+id/action_thirdFragment_to_cinemaFragment"
+            app:destination="@id/cinemaFragment" />
+    </fragment>
+</navigation>
